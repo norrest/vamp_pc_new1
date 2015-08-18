@@ -1,0 +1,11 @@
+sudo chmod -R 777 /var/lib/mpd/playlists/
+sudo mkdir /usr/tmpi
+sudo apt-get -y update && sudo apt-get install -y git-core
+sudo git clone https://github.com/norrest/volumio.git /usr/tmpi
+sudo apt-get -y remove git-core
+sudo chmod -R 777 /usr/tmpi
+cp -arpf /usr/tmpi/etc/ /
+cp -arpf /usr/tmpi/usr/bin/ /usr/
+cp -arpf /usr/tmpi/var/ /
+sudo rm -R /usr/tmpi
+echo "$(tput setaf 1)[+] All done! please reboot )"

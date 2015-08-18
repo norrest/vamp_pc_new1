@@ -1,6 +1,6 @@
 <?php
 
-$result = shell_exec('bash /sbin/update');
+$result = shell_exec('bash /usr/sbin/update');
 echo $result;
 
 ?>
