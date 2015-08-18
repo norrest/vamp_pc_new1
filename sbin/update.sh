@@ -8,10 +8,10 @@ sudo apt-get -y update && sudo apt-get install -y git-core
 echo "$(tput setaf 1)[+] Update Volumio from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
 export GIT_SSL_NO_VERIFY=1
-mkdir /usr/tmp
-chmod -R 777 /usr/tmp
-mv /home/volumio/* /usr/tmp/
-git clone https://github.com/norrest/volumio.git /home/volumio
+sudo mkdir /usr/tmp
+sudo chmod -R 777 /usr/tmp
+sudo mv /home/volumio/* /usr/tmp/
+sudo git clone https://github.com/norrest/volumio.git /home/volumio
 sudo service mpd stop
 echo "$(tput setaf 1)[+] Setting permissions$(tput sgr 0)"
 #chmod 775 /var/www/_OS_SETTINGS/etc/rc.local
@@ -19,8 +19,8 @@ echo "$(tput setaf 1)[+] Setting permissions$(tput sgr 0)"
 #chmod -R 777 /var/www/command/
 #chmod -R 777 /var/www/db/
 #chmod -R 777 /var/www/inc/
-chmod -R 777 /home/volumio/
-chmod -R 777 /var/lib/mpd/playlists/
+sudo chmod -R 777 /home/volumio/
+sudo chmod -R 777 /var/lib/mpd/playlists/
 #copy relevant configuration files, preserving permissions
 cp -arpf /home/volumio/etc/ /
 cp -arpf /home/volumio/sbin/ /
