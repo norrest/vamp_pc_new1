@@ -79,12 +79,13 @@
 			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i> Main</a></li>
 			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i> Library</a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i> Playback</a></li>
-			<li class=""><a target=_blank class="close" href="free_space.php"><i class="fa fa-folder-open sx"></i> Free Internal Space</a></li>
+			<li class=""><a target=_blank href="free_space.php"><i class="fa fa-folder-open sx"></i> Free Internal Space</a></li>
 			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network</a></li>
 			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i> System</a></li>
 			<li class="<?php ami('credits'); ?>"><a href="credits.php"><i class="fa fa-trophy sx"></i> Credits</a></li>
 			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
-                        <li class=""><a target=_blank class="close" href="del.php"><i class="fa fa-folder-open sx"></i> Clear Library</a></li>	
+            <li class=""><a target=_blank class="close" href="del.php"><i class="fa fa-folder-open sx"></i> Clear Library</a></li>	
+			<li class=""><a target=_blank class="close" href="update.php"><i class="fa fa-folder-open sx"></i> Update</a></li>
 		</ul>
 	</div>
 	<div class="playback-controls">	
