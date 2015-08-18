@@ -1,9 +1,9 @@
 #! /bin/sh
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
-apt-get -y update
+
 echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
 #install git
-apt-get -y install git-core
+sudo apt-get -y update && sudo apt-get install -y git-core
 
 echo "$(tput setaf 1)[+] Update Volumio from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
@@ -29,4 +29,4 @@ cp -arpf /home/volumio/var/ /
 #optionally remove git just to clean things up.
 apt-get -y remove git-core
 sudo service mpd start
-echo "$(tput setaf 1)[+] All done! please reboot reboot )"
+echo "$(tput setaf 1)[+] All done! please reboot )"
