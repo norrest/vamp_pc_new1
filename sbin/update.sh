@@ -12,7 +12,7 @@ sudo mkdir /usr/tmp
 sudo chmod -R 777 /usr/tmp
 sudo mv /home/volumio/* /usr/tmp/
 sudo git clone https://github.com/norrest/volumio.git /home/volumio
-sudo service mpd stop
+sudo /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Setting permissions$(tput sgr 0)"
 #chmod 775 /var/www/_OS_SETTINGS/etc/rc.local
 #chmod 755 /var/www/_OS_SETTINGS/etc/php5/mods-available/apc.ini
@@ -28,5 +28,5 @@ cp -arpf /home/volumio/var/ /
 # cp -af (nead check)
 #optionally remove git just to clean things up.
 apt-get -y remove git-core
-sudo service mpd start
+sudo /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] All done! please reboot )"
