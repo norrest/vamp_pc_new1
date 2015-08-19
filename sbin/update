@@ -6,13 +6,13 @@ echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
 apt-get -y install git-core
 echo "$(tput setaf 1)[+] Cloning Volumio from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
-export GIT_SSL_NO_VERIFY=1
 mkdir /update/tmpi
 git clone https://github.com/norrest/volumio.git /update/tmpi
 chmod -R 777 /update/tmpi
-cp -arp /update/tmpi/etc/ /
-cp -arp /update/tmpi/var/ /
-cp -arp /update/tmpi/sbin/ /
+sudo cp -pfR /update/tmpi/etc/ /
+sudo cp -pfR /update/tmpi/var/ /
+sudo cp -pfR /update/tmpi/sbin/ /
 #optionally remove git just to clean things up.
 apt-get -y remove git-core
+sudo rm -R /update/tmpi
 echo "$(tput setaf 1)[+] All done! please reboot with sudo reboot and say thanks to Ebsy$(tput sgr 0)"
