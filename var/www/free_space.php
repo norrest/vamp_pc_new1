@@ -1,6 +1,6 @@
 <?php
 
-$result = shell_exec('bash /update/free_space');
+$result = shell_exec('bash /sbin/free_space');
 echo $result;
 
 ?>
