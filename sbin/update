@@ -1,10 +1,11 @@
 #! /bin/sh
 sudo apt-get -y update && sudo apt-get install -y git-core
+sudo mkdir /update/tmpi
 sudo git clone https://github.com/norrest/volumio.git /update/tmpi
-sudo apt-get -y remove git-core
 sudo chmod -R 777 /update/tmpi
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
 sudo rm -R /update/tmpi
+sudo apt-get -y remove git-core
 echo "$(tput setaf 1)[+] All done! please reboot )"
