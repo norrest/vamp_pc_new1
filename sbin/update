@@ -8,7 +8,7 @@ echo "$(tput setaf 1)[+] Cloning Volumio from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
 mkdir /update/tmpi
 git clone https://github.com/norrest/volumio.git /update/tmpi
-chmod -R 777 /update/tmpi
+sudo chmod -R 777 /update/tmpi
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
