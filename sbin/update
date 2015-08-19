@@ -1,6 +1,5 @@
 #! /bin/sh
 sudo apt-get -y update && sudo apt-get install -y git-core
-export GIT_SSL_NO_VERIFY=1
 sudo git clone https://github.com/norrest/volumio.git /update/tmpi
 sudo apt-get -y remove git-core
 sudo chmod -R 777 /update/tmpi
