@@ -15,4 +15,5 @@ sudo cp -pfR /update/tmpi/sbin/ /
 #optionally remove git just to clean things up.
 apt-get -y remove git-core
 sudo rm -R /update/tmpi
+sudo chmod -R 777 /var/lib/mpd/playlists/
 echo "$(tput setaf 1)[+] All done! please reboot with sudo reboot and say thanks to Ebsy$(tput sgr 0)"
