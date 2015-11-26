@@ -1,4 +1,5 @@
 #! /bin/sh
+sudo service mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 apt-get -y update
 echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
@@ -17,3 +18,4 @@ apt-get -y remove git-core
 sudo rm -R /update/tmpi
 sudo chmod -R 777 /var/lib/mpd/playlists/
 echo "$(tput setaf 1)[+] All done! please reboot with sudo reboot and say thanks to Ebsy$(tput sgr 0)"
+sudo service mpd start
