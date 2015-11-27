@@ -23,7 +23,7 @@
 			<button id="free-space" name="Free Disk Space" formtarget="_blank" formaction="free_space.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Free Disk Space </button>
 			<button id="check-and-space" name="Check And Reboot" formtarget="_blank" formaction="chec.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Checking Disk And Reboot </button>
 			<button id="force-remove-samba" name="Forced Remove Network Mount" formtarget="_blank" formaction="del.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Forced Removal Of Network Mount </button>
-			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="upd.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Update / Reinstall Updates </button>
+			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Update / Reinstall Updates </button>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
