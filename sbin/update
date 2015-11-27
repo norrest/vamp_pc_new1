@@ -1,5 +1,5 @@
 #! /bin/sh
-sudo service mpd stop
+/etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 apt-get -y update
 echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
@@ -17,7 +17,7 @@ sudo cp -pfR /update/tmpi/sbin/ /
 apt-get -y remove git-core
 sudo rm -R /update/tmpi
 sudo chmod -R 777 /var/lib/mpd/playlists/
-sudo service mpd start
+/etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 echo "If bug exists, please copy it and send in mail to volumio@obu4enie.kiev.ua"
 
