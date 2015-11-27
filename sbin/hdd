@@ -1,0 +1,8 @@
+#! /bin/sh
+sudo mpd service stop
+sudo umount -f /mnt/USB
+sudo umount -l /mnt/USB
+sudo fsck -y /dev/sda1
+echo pause 5 seconds and reboot... PLEASE WAIT!!!!!!
+sleep 5s 
+reboot
