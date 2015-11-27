@@ -5,7 +5,7 @@ apt-get -y update
 echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
 #install git
 apt-get -y install git-core
-echo "$(tput setaf 1)[+] Cloning Volumio from github$(tput sgr 0)"
+echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
 mkdir /update/tmpi
 git clone https://github.com/norrest/volumio.git /update/tmpi
@@ -17,5 +17,8 @@ sudo cp -pfR /update/tmpi/sbin/ /
 apt-get -y remove git-core
 sudo rm -R /update/tmpi
 sudo chmod -R 777 /var/lib/mpd/playlists/
-echo "$(tput setaf 1)[+] All done! please reboot with sudo reboot and say thanks to Ebsy$(tput sgr 0)"
 sudo service mpd start
+echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
+echo "If bug exists, please copy it and send in mail to volumio@obu4enie.kiev.ua"
+
+
