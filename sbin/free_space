@@ -1,3 +1,3 @@
 #! /bin/sh
-df -h /mnt/USB
+df -h --output=size,used,avail  /mnt/USB
 
