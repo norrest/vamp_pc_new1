@@ -1,0 +1,11 @@
+#! /bin/sh
+cat /proc/asound/*  
+cat /proc/asound/card0/*
+cat /proc/asound/card1/*
+cat /proc/asound/card2/*
+cat /proc/asound/card0/pcm0p/*
+cat /proc/asound/card1/pcm0p/*
+cat /proc/asound/card2/pcm0p/*
+cat /proc/asound/card0/pcm0p/sub0/*
+cat /proc/asound/card1/pcm0p/sub0/*
+cat /proc/asound/card2/pcm0p/sub0/*
