@@ -1,4 +1,6 @@
 #! /bin/sh
+mpc clear
+mpc stop
 /etc/init.d/mpd stop
 sudo umount -f /mnt/NAS/*
 sudo umount -l /mnt/NAS/*
@@ -9,7 +11,12 @@ cp /var/www/db/bkp.db /var/www/db/player.db
 chmod 777 /var/www/db/player.db
 sqlite3 /var/www/db/player.db 'delete from cfg_source'
 sudo mkdir /mnt/NAS
+sudo chmod -R 777 /mnt/NAS
 cd /var/lib/mpd/music/
 sudo ln -s /mnt/NAS /var/lib/mpd/music/NAS
+sudo chmod -R 777 /var/lib/mpd/music
 /etc/init.d/mpd start
-echo "External Network Drive Deleted. PLEASE UPDATE LYBRARY!!!!!"
+mpc update NAS
+exit 0
+echo  $? "External Network Drive Deleted. !!!!!"
+
