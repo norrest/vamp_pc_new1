@@ -16,6 +16,7 @@ sudo cp -pfR /update/tmpi/sbin/ /
 #optionally remove git just to clean things up.
 apt-get -y remove git-core
 sudo rm -R /update/tmpi
+sudo mkdir /var/lib/mpd/playlists/
 sudo chmod -R 777 /var/lib/mpd/playlists/
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
