@@ -16,7 +16,6 @@ sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
 sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html
 #optionally remove git just to clean things up.
-apt-get -y remove git-core
 sudo rm -R /update/tmpi
 sudo mkdir /var/lib/mpd/playlists/
 sudo chmod -R 777 /var/lib/mpd/playlists/
