@@ -123,6 +123,15 @@ if(isset($_POST['radio-name']) && isset($_POST['radio-url'])) {
 }
 ?>
 <script type="text/javascript">
+        setLibOptions(
+                <? echo isset($_SESSION['displaylib']) && $_SESSION['displaylib'] == 1 ? 1 : 0;?>/*is enabled?*/,
+                <? echo isset($_SESSION['displaylibastab']) && $_SESSION['displaylibastab'] == 1 ? 1 : 0;?>/*display as tab o
+                <? echo $sezione == 'index' ? 1 : 0; ?>/*should load it?*/
+        );
+loadLibraryIfNeeded();
+</script>
+
+<script type="text/javascript">
 	setLibOptions(
 		<? echo isset($_SESSION['displaylib']) && $_SESSION['displaylib'] == 1 ? 1 : 0;?>/*is enabled?*/,
 		<? echo isset($_SESSION['displaylibastab']) && $_SESSION['displaylibastab'] == 1 ? 1 : 0;?>/*display as tab or in browse view?*/,
