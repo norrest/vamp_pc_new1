@@ -1,4 +1,5 @@
 #! /bin/sh
+mpc stop
 /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 apt-get -y update
@@ -13,6 +14,7 @@ sudo chmod -R 777 /update/tmpi
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
+sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html
 #optionally remove git just to clean things up.
 apt-get -y remove git-core
 sudo rm -R /update/tmpi
