@@ -15,6 +15,7 @@ sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
 sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html
+sudo mkdir /etc/nginx/html/
 sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 #optionally remove git just to clean things up.
 sudo rm -R /update/tmpi
