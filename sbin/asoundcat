@@ -2,7 +2,6 @@
 cat /proc/asound/* | grep USB
 cat /proc/asound/* | grep speed
 cat /proc/asound/card1/* | grep Status
-cat /proc/asound/card1/* | grep Momentary
 cat /proc/asound/card1/pcm0p/* | grep id
 cat /proc/asound/card1/pcm0p/* | grep name
 cat /proc/asound/card1/pcm0p/sub0/* | grep access
@@ -11,7 +10,6 @@ cat /proc/asound/card1/pcm0p/sub0/* | grep state
 cat /proc/asound/card1/pcm0p/sub0/* | grep channels
 cat /proc/asound/card1/pcm0p/sub0/* | grep rate
 cat /proc/asound/card0/* | grep Status
-cat /proc/asound/card0/* | grep Momentary
 cat /proc/asound/card0/pcm0p/* | grep id
 cat /proc/asound/card0/pcm0p/* | grep name
 cat /proc/asound/card0/pcm0p/sub0/* | grep access
@@ -20,7 +18,6 @@ cat /proc/asound/card0/pcm0p/sub0/* | grep state
 cat /proc/asound/card0/pcm0p/sub0/* | grep channels
 cat /proc/asound/card0/pcm0p/sub0/* | grep rate
 cat /proc/asound/card2/* | grep Status
-cat /proc/asound/card2/* | grep Momentary
 cat /proc/asound/card2/pcm0p/* | grep id
 cat /proc/asound/card2/pcm0p/* | grep name
 cat /proc/asound/card2/pcm0p/sub0/* | grep access
@@ -29,7 +26,6 @@ cat /proc/asound/card2/pcm0p/sub0/* | grep state
 cat /proc/asound/card2/pcm0p/sub0/* | grep channels
 cat /proc/asound/card2/pcm0p/sub0/* | grep rate 
 cat /proc/asound/card3/* | grep Status
-cat /proc/asound/card3/* | grep Momentary
 cat /proc/asound/card3/pcm0p/* | grep id
 cat /proc/asound/card3/pcm0p/* | grep name
 cat /proc/asound/card3/pcm0p/sub0/* | grep access
@@ -37,6 +33,13 @@ cat /proc/asound/card3/pcm0p/sub0/* | grep format
 cat /proc/asound/card3/pcm0p/sub0/* | grep state
 cat /proc/asound/card3/pcm0p/sub0/* | grep channels
 cat /proc/asound/card3/pcm0p/sub0/* | grep rate
-echo "                           USB DEVICES
-                " 
+echo "
+Dsd Over Pcm" && cat /etc/mpd.conf | grep dop 
+
+echo "
+DSD Native Mode" && cat /etc/mpd.conf | grep dsd_native
+
+echo "  
+                        
+USB DEVICES" 
 lsusb
