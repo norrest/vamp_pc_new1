@@ -755,3 +755,18 @@ function backendRequestSpop() {
         }
     });
 }
+
+
+
+   //Change Name according to Now Playing
+   if (GUI.currentartist != null && GUI.currentsong != null) {
+      document.title = objectInputState['currentsong'] + ' - ' + objectInputState['currentartist'] + ' - ' + 'Volumio';
+      if (GUI.playlist == null) {
+         $('#playlist-position').html('&nbsp;');
+      }
+
+   } else {
+      document.title = 'Volumio';
+      $('#currentalbum').html('')
+      $('#playlist-position').html('&nbsp;');
+    }
