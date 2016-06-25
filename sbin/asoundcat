@@ -1,4 +1,5 @@
 #! /bin/sh
+print "Content-Type: text/html\n\n";
 cat /proc/asound/* | grep USB
 cat /proc/asound/* | grep speed
 cat /proc/asound/card1/* | grep Status
