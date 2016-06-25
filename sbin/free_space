@@ -1,3 +1,4 @@
 #! /bin/sh
+print "Content-Type: text/html\n\n";
 df -h --output=size,used,avail  /mnt/USB
 
