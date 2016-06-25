@@ -1,4 +1,5 @@
 #! /bin/sh
+print "Content-Type: text/html\n\n";
 sudo mpc stop
 sudo mpd stop
 sudo umount -f /mnt/USB
