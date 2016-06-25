@@ -1,4 +1,5 @@
 #! /bin/sh
+print "Content-Type: text/html\n\n";
 mpc clear
 mpc stop
 /etc/init.d/mpd stop
