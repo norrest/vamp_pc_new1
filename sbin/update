@@ -1,6 +1,6 @@
 #! /bin/sh
-mpc stop
-/etc/init.d/mpd stop
+sudo mpc stop
+sudo /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 #apt-get -y update
 #echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
