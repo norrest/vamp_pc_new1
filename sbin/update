@@ -8,7 +8,7 @@ echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 apt-get -y install git-core
 echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
-mkdir /update/tmpi
+mkdir -p /update/tmpi
 mkdir /usr/share/nginx/html
 mkdir /etc/nginx/html
 mkdir /lib/modules/4.4.8/kernel/sound/usb
