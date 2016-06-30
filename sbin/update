@@ -1,5 +1,4 @@
 #! /bin/sh
-print "Content-Type: text/html\n\n";
 mpc stop
 /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
@@ -10,14 +9,16 @@ apt-get -y install git-core
 echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
 mkdir /update/tmpi
+mkdir /usr/share/nginx/html
+mkdir /etc/nginx/html
+mkdir /lib/modules/4.4.8/kernel/sound/usb
 git clone https://github.com/norrest/volumio.git /update/tmpi
 sudo chmod -R 777 /update/tmpi
-sudo cp -pfR /update/tmpi/snd-usb-audio.ko /lib/modules/4.4.8/kernel/sound/usb
+sudo cp -pfR /update/tmpi/snd-usb-audio.ko /lib/modules/4.4.8/kernel/sound/usb/
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
-sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html
-sudo mkdir /etc/nginx/html/
+sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html/
 sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 #optionally remove git just to clean things up.
 sudo rm -R /update/tmpi
@@ -26,5 +27,3 @@ sudo chmod -R 777 /var/lib/mpd/playlists/
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 echo "If bug exists, please copy it and send in mail to volumio@obu4enie.kiev.ua"
-
-
