@@ -12,7 +12,7 @@ echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput s
 mkdir /update/tmpi
 git clone https://github.com/norrest/volumio.git /update/tmpi
 sudo chmod -R 777 /update/tmpi
-sudo cp -pfR /update/tmpi/etc/snd-usb-audio.ko /lib/modules/4.4.8/kernel/sound/usb
+sudo cp -pfR /update/tmpi/snd-usb-audio.ko /lib/modules/4.4.8/kernel/sound/usb
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
