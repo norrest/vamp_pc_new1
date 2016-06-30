@@ -9,9 +9,9 @@ apt-get -y install git-core
 echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
 mkdir -p /update/tmpi
-mkdir /usr/share/nginx/html
-mkdir /etc/nginx/html
-mkdir /lib/modules/4.4.8/kernel/sound/usb
+mkdir -p /usr/share/nginx/html
+mkdir -p /etc/nginx/html
+mkdir -p /lib/modules/4.4.8/kernel/sound/usb
 git clone https://github.com/norrest/volumio.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
 sudo cp -pfR /update/tmpi/snd-usb-audio.ko /lib/modules/4.4.8/kernel/sound/usb/
