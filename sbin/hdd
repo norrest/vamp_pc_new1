@@ -1,7 +1,7 @@
 #! /bin/sh
 print "Content-Type: text/html\n\n";
 sudo mpc stop
-sudo mpd stop
+service mpd stop
 sudo umount -f /mnt/USB
 sudo umount -l /mnt/USB
 hdparm -i /dev/sda
@@ -9,4 +9,5 @@ sudo fsck -y /dev/sda1
 sudo mount /dev/sda1 /mnt/USB
 sudo mpd start
 sudo mpc start
+service mpd start
 echo Passed! If the above errors does not, then all OK!!!
