@@ -7,6 +7,7 @@ sudo umount -l /mnt/USB
 sudo umount -l /dev/sda1
 hdparm -i /dev/sda
 sudo fsck -y /dev/sda1
+sudo tune2fs -m 0 /dev/sda1
 sudo mount /dev/sda1 /mnt/USB
 sudo mpd start
 sudo mpc start
