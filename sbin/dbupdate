@@ -1,0 +1,5 @@
+
+#!/bin/bash
+ifconfig | grep HWaddr | sed 's/.*HWaddr //' 1> /sbin/locall
+touch -t201211030000 /sbin/locall
+exit 0
