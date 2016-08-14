@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ $(ifconfig | grep HWaddr | sed 's/.*HWaddr //') != $(cat /sbin/locall) ];
+then
+touch /sbin/222
+        echo "wrong  $0."
+        exit 1;
+fi
+    echo "succes"
+        exit 1;
