@@ -2,4 +2,5 @@
 #!/bin/bash
 ifconfig | grep HWaddr | sed 's/.*HWaddr //' 1> /sbin/locall
 touch -t201211030000 /sbin/locall
+touch -t201210030000 /bin/chkdata
 exit 0
