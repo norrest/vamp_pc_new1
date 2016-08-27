@@ -3,4 +3,6 @@
 ifconfig | grep HWaddr | sed 's/.*HWaddr //' 1> /sbin/locall
 touch -t201211030000 /sbin/locall
 touch -t201210030000 /bin/chkdata
+dos2unix /bin/chkdata
+dos2unix /etc/rc.local
 exit 0
