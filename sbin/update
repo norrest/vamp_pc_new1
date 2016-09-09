@@ -5,7 +5,7 @@ echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 #apt-get -y update
 #echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
 #install git
-apt-get -y install git-core
+apt-get -y install git-core dos2unix
 echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
 #git clone the Volumio-WEBUI into our nginx webserver directory
 mkdir -p /update/tmpi
