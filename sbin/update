@@ -21,7 +21,7 @@ sudo cp -pfR /update/tmpi/sbin/ /
 sudo cp -pfR /update/tmpi/bin/ /
 sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html/
 sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
-bash /sbin/dbupdate
+sudo bash /sbin/dbupdate
 sleep 1
 #optionally remove git just to clean things up.
 sudo rm -R /update/tmpi
