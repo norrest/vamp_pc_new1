@@ -37,9 +37,6 @@ cat /proc/asound/card3/pcm0p/sub0/* | grep rate
 echo "
 Dsd Over Pcm" && cat /etc/mpd.conf | grep dop 
 
-echo "
-DSD Native Mode" && cat /etc/mpd.conf | grep dsd_native
-
 echo "  
                         
 USB DEVICES" 
