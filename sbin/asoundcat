@@ -2,42 +2,16 @@
 print "Content-Type: text/html\n\n";
 cat /proc/asound/* | grep USB
 cat /proc/asound/* | grep speed
-cat /proc/asound/card1/* | grep Status
-cat /proc/asound/card1/pcm0p/* | grep id
-cat /proc/asound/card1/pcm0p/* | grep name
-cat /proc/asound/card1/pcm0p/sub0/* | grep access
-cat /proc/asound/card1/pcm0p/sub0/* | grep format 
-cat /proc/asound/card1/pcm0p/sub0/* | grep state
-cat /proc/asound/card1/pcm0p/sub0/* | grep channels
-cat /proc/asound/card1/pcm0p/sub0/* | grep rate
-cat /proc/asound/card0/* | grep Status
-cat /proc/asound/card0/pcm0p/* | grep id
-cat /proc/asound/card0/pcm0p/* | grep name
-cat /proc/asound/card0/pcm0p/sub0/* | grep access
-cat /proc/asound/card0/pcm0p/sub0/* | grep format 
-cat /proc/asound/card0/pcm0p/sub0/* | grep state
-cat /proc/asound/card0/pcm0p/sub0/* | grep channels
-cat /proc/asound/card0/pcm0p/sub0/* | grep rate
-cat /proc/asound/card2/* | grep Status
-cat /proc/asound/card2/pcm0p/* | grep id
-cat /proc/asound/card2/pcm0p/* | grep name
-cat /proc/asound/card2/pcm0p/sub0/* | grep access
-cat /proc/asound/card2/pcm0p/sub0/* | grep format 
-cat /proc/asound/card2/pcm0p/sub0/* | grep state
-cat /proc/asound/card2/pcm0p/sub0/* | grep channels
-cat /proc/asound/card2/pcm0p/sub0/* | grep rate 
-cat /proc/asound/card3/* | grep Status
-cat /proc/asound/card3/pcm0p/* | grep id
-cat /proc/asound/card3/pcm0p/* | grep name
-cat /proc/asound/card3/pcm0p/sub0/* | grep access
-cat /proc/asound/card3/pcm0p/sub0/* | grep format 
-cat /proc/asound/card3/pcm0p/sub0/* | grep state
-cat /proc/asound/card3/pcm0p/sub0/* | grep channels
-cat /proc/asound/card3/pcm0p/sub0/* | grep rate
-echo "
-Dsd Over Pcm" && cat /etc/mpd.conf | grep dop 
+cat /proc/asound/card*/* | grep Status
+cat /proc/asound/card*/pcm*p/* | grep id
+cat /proc/asound/card*/pcm*p/sub*/* | grep access
+cat /proc/asound/card*/pcm*p/sub*/* | grep state
+cat /proc/asound/card*/pcm*p/sub*/* | grep channels
+cat /proc/asound/card*/pcm*p/sub*/* | grep rate
 
+echo "
+Dsd Over Pcm" && cat /etc/mpd.conf | grep --color=auto 'dop' 
 echo "  
                         
-USB DEVICES" 
-lsusb
+USB DAC DEVICES" 
+lsusb | grep -v Linux
