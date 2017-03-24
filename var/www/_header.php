@@ -80,7 +80,7 @@
 			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i> Library</a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i> Playback </a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i> DAC Info </a></li>
-			<li><a href="#service-menu-modal" data-toggle="modal" class="close"><i class="fa fa-cogs sx"></i> Service Menu</a></li>
+			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i> Service Menu</a></li>
 			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network</a></li>
 			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i> System</a></li>
 			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
