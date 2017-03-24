@@ -561,7 +561,7 @@ function updateGUI(objectInputState){
 		document.title = objectInputState['currentsong'] + ' - ' + objectInputState['currentartist'] + ' - ' + 'Volumio';
 
 	} else {
-            document.title = 'Volumio - Audiophile Music Player';
+            document.title = 'V.A.M.P.';
 
     }
 
