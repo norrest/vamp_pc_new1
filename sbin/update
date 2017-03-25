@@ -28,7 +28,7 @@ sudo rm -R /update/tmpi
 sudo rm -R /sbin/dbupdate
 sudo mkdir /var/lib/mpd/playlists/
 sudo chmod -R 777 /var/lib/mpd/playlists/
-sudo service php5-fpm restart && sudo service nginx restart
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
+sudo service php5-fpm restart && sudo service nginx restart
 
