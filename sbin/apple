@@ -1,6 +1,6 @@
 #! /bin/sh
 apt-get update
-apt-get -y install avahi-daemon avahi-autoipd libnss-mdns avahi-utils
+apt-get -y install avahi-daemon avahi-autoipd libnss-mdns avahi-utils libconfig-dev
 getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null
 getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-sync -s /usr/bin/nologin -G audio shairport-sync >/dev/null
 chmod 777 /usr/local/bin/shairport-sync
