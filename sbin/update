@@ -1,4 +1,12 @@
 #! /bin/sh
+ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
+ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
+#ver="${ver//.}"          # remove periods (a single `/` would do here)
+#echo "$ver"
+b="4"
+#echo b
+if [ "$ver" \> "$b" ];
+then
 sudo mpc stop
 systemctl stop mpd.socket 
 sudo /etc/init.d/mpd stop
@@ -31,4 +39,7 @@ sudo chmod -R 777 /var/lib/mpd/playlists/
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 sudo service php5-fpm restart && sudo service nginx restart
-
+       exit 1;
+fi
+    echo "old ver"   
+       exit 1;
