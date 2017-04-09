@@ -7,7 +7,7 @@ getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-syn
 sudo chmod 777 /usr/local/bin/shairport-sync
 sudo chmod 777 /etc/shairport-sync.conf
 rm -f /usr/lib/systemd/system/shairport-sync.service
-sudo systemctl enable shairport-sync
+#sudo systemctl enable shairport-sync
 #sudo update-rc.d shairport-sync defaults 90 10
 #service shairport-sync start
 reboot
