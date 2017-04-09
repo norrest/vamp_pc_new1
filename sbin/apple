@@ -1,4 +1,9 @@
 #! /bin/sh
 apt-get update
 apt-get -y install avahi-daemon avahi-autoipd libnss-mdns avahi-utils
+getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null
+getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-sync -s /usr/bin/nologin -G audio shairport-sync >/dev/null
+chmod -777 /usr/local/bin/shairport-sync
+sudo systemctl enable shairport-sync
+sudo update-rc.d shairport-sync defaults 90 10
 reboot
