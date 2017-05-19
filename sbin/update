@@ -22,6 +22,7 @@ mkdir -p /etc/nginx/html
 mkdir -p /lib/modules/4.4.8/kernel/sound/usb
 git clone https://github.com/norrest/volumio.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
+sudo rm -R /etc/apt/sources.list.d/
 sudo cp -pfR /update/tmpi/snd-usb-audio.ko /lib/modules/4.4.8/kernel/sound/usb/
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
