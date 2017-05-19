@@ -1,0 +1,2 @@
+deb http://www.lesbonscomptes.com/upmpdcli/downloads/debian-jessie/ unstable main
+deb-src http://www.lesbonscomptes.com/upmpdcli/downloads/debian-jessie/ unstable main 
