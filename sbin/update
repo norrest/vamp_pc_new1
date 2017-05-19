@@ -11,7 +11,6 @@ sudo mpc stop
 systemctl stop mpd.socket 
 sudo /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
-#apt-get -y update
 #echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
 #install git
 echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
@@ -31,6 +30,8 @@ sudo cp -pfR /update/tmpi/bin/ /
 sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html/
 sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 sudo bash /sbin/dbupdate
+apt-get -y update
+apt-get -y install ethtool
 sleep 1
 #optionally remove git just to clean things up.
 sudo rm -R /update/tmpi
