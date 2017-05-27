@@ -22,8 +22,6 @@ mkdir -p /lib/modules/4.4.8/kernel/sound/usb
 git clone https://github.com/norrest/volumio.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
 sudo rm -R /etc/apt/sources.list.d/
-sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.8.ko /lib/modules/4.4.8/kernel/sound/usb/snd-usb-audio.ko
-sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.44.ko /lib/modules/4.4.44/kernel/sound/usb/snd-usb-audio.ko
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
