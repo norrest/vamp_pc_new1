@@ -5,4 +5,6 @@ dos2unix /bin/chkdata
 touch -t201211030000 /sbin/locall /bin/chkdata
 dos2unix /etc/rc.local
 (echo root; echo root) | smbpasswd -a -s root
+sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.8.ko /lib/modules/4.4.8/kernel/sound/usb/snd-usb-audio.ko
+sudo cp -pfR /update/tmpi/snd-usb-audio-4.4.44.ko /lib/modules/4.4.44/kernel/sound/usb/snd-usb-audio.ko
 exit 0
