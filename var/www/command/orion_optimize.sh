@@ -59,10 +59,9 @@ fi
 
 # default
 if [ "$1" == "default" ]; then
-echo -n ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 ifconfig eth0 mtu 1500
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 60 > /proc/sys/vm/swappiness
 echo 6000000 > /proc/sys/kernel/sched_latency_ns
 echo 1000000 > /proc/sys/kernel/sched_rt_period_us
 echo 950000 > /proc/sys/kernel/sched_rt_runtime_us
@@ -76,10 +75,9 @@ fi
 
 # beta1
 if [ "$1" == "Mike" ]; then
-echo -n ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 ifconfig eth0 mtu 1500
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 0 > /proc/sys/vm/swappiness
 echo 100000 > /proc/sys/kernel/sched_latency_ns
 echo 10000 > /proc/sys/kernel/sched_rt_period_us
 echo 9500 > /proc/sys/kernel/sched_rt_runtime_us
@@ -92,10 +90,9 @@ fi
 
 # mod1
 if [ "$1" == "ACX" ]; then
-echo -n ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 ifconfig eth0 mtu 1500
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 0 > /proc/sys/vm/swappiness
 echo 1000000 > /proc/sys/kernel/sched_latency_ns
 echo 166666 > /proc/sys/kernel/sched_rt_period_us
 echo 158333 > /proc/sys/kernel/sched_rt_runtime_us
@@ -107,10 +104,9 @@ fi
 
 # mod2
 if [ "$1" == "Orion" ]; then
-echo -n ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 ifconfig eth0 mtu 1500
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 0 > /proc/sys/vm/swappiness
 echo 500000 > /proc/sys/kernel/sched_latency_ns
 echo 124999 > /proc/sys/kernel/sched_rt_period_us
 echo 118749 > /proc/sys/kernel/sched_rt_runtime_us
@@ -122,10 +118,9 @@ fi
 
 # mod3
 if [ "$1" == "Buscia" ]; then
-echo -n ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 ifconfig eth0 mtu 1500
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 0 > /proc/sys/vm/swappiness
 echo 625000 > /proc/sys/kernel/sched_latency_ns
 echo 156248 > /proc/sys/kernel/sched_rt_period_us
 echo 148436 > /proc/sys/kernel/sched_rt_runtime_us
