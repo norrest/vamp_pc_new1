@@ -5,13 +5,17 @@ cat /proc/asound/* | grep speed
 cat /proc/asound/card*/* | grep Status
 cat /proc/asound/card*/pcm*p/* | grep id
 cat /proc/asound/card*/pcm*p/sub*/* | grep access
+cat /proc/asound/card*/pcm*p/sub*/* | grep DSD
 cat /proc/asound/card*/pcm*p/sub*/* | grep state
 cat /proc/asound/card*/pcm*p/sub*/* | grep channels
 cat /proc/asound/card*/pcm*p/sub*/* | grep rate
 
 echo "
-Dsd Over Pcm" && cat /etc/mpd.conf | grep --color=auto 'dop' 
+Dsd " && cat /etc/mpd.conf | grep --color=auto 'dop' 
+echo "
+ " && cat /etc/mpd.conf | grep --color=auto 'dsd' 
 echo "  
+
                         
 USB DAC DEVICES" 
 lsusb | grep -v Linux
