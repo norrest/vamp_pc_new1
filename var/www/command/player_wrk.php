@@ -268,7 +268,7 @@ $fp = fopen($file, 'w');
 fwrite($fp, implode("",$newArray));
 fclose($fp);
 // Start minidlna service
-sysCmd('/usr/bin/minidlna -f /run/minidlna.conf');
+sysCmd('/usr/bin/minidlnad -f /run/minidlna.conf');
 }
 // check /etc/network/interfaces integrity
 hashCFG('check_net',$db);
