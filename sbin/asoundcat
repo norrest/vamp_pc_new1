@@ -12,10 +12,6 @@ cat /proc/asound/card*/pcm*p/sub*/* | grep rate
 
 echo "
 Dsd " && cat /etc/mpd.conf | grep --color=auto 'dop' 
-echo "
- " && cat /etc/mpd.conf | grep --color=auto 'dsd' 
 echo "  
-
-                        
-USB DAC DEVICES" 
+USB DEVICES" 
 lsusb | grep -v Linux
