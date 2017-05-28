@@ -64,8 +64,8 @@ echo 300 > /proc/sys/vm/vfs_cache_pressure
 ifconfig eth0 mtu 1500
 echo 0 > /proc/sys/vm/swappiness
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 30 > /proc/sys/vm/dirty_ratio
-echo 30 > /proc/sys/vm/dirty_background_ratio # увеличили страничный кеш 
+echo 20 > /proc/sys/vm/dirty_ratio
+echo 20 > /proc/sys/vm/dirty_background_ratio # увеличили страничный кеш 
 echo 6000000 > /proc/sys/kernel/sched_latency_ns
 echo 1000000 > /proc/sys/kernel/sched_rt_period_us
 echo 950000 > /proc/sys/kernel/sched_rt_runtime_us
