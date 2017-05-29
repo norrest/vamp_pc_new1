@@ -3,3 +3,4 @@ for file in /var/log/lastlog /var/log/syslog /var/log/kern.log /var/log/dmesg /v
 unlink $file
 ln -s /dev/null $file
 done
+exit 0
