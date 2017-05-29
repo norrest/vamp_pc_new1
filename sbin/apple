@@ -1,5 +1,4 @@
 #! /bin/sh
-apt-get update
 apt-get -y install avahi-daemon avahi-autoipd libnss-mdns avahi-utils libconfig-dev
 ln -s /usr/local/bin/shairport-sync /usr/bin/shairport-sync
 getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null
