@@ -93,6 +93,7 @@
 			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network</a></li>
 			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i> System</a></li>
 			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
+			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" ><i class="fa">Restart MPD</i></button></form>
 		</ul>
 	</div>
 	<div class="playback-controls">	
@@ -100,7 +101,6 @@
 		<button id="stop" class="btn btn-cmd" title="Stop"><i class="fa fa-stop"></i></button>
 		<button id="play" class="btn btn-cmd" title="Play/Pause"><i class="fa fa-play"></i></button>
 		<button id="next" class="btn btn-cmd" title="Next"><i class="fa fa-step-forward"></i></button>
-		<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" ><i class="fa">Restart MPD</i></button></form>
 	</div>
 	<a class="home" href="index.php"><img src="images/logo.png" class="logo" alt="VAMP"></a>
 </div>
