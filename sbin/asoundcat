@@ -9,5 +9,5 @@ cat /proc/asound/card*/pcm*p/sub*/* | grep DSD
 cat /proc/asound/card*/pcm*p/sub*/* | grep state
 cat /proc/asound/card*/pcm*p/sub*/* | grep rate
  
-
+echo "USB DEVICES:"
 lsusb | grep -v Linux
