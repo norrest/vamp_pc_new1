@@ -60,7 +60,6 @@ fi
 # default
 if [ "$1" == "default" ]; then
 echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo 300 > /proc/sys/vm/vfs_cache_pressure
 ifconfig eth0 mtu 1500
 echo 0 > /proc/sys/vm/swappiness
 echo noop > /sys/block/mmcblk0/queue/scheduler
