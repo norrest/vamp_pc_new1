@@ -93,7 +93,7 @@
 			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network</a></li>
 			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i> System</a></li>
 			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
-			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" ><i class="fa">Restart MPD</i></button></form>
+			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" >Restart MPD</button></form>
 		</ul>
 	</div>
 	<div class="playback-controls">	
