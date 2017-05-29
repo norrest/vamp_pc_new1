@@ -71,6 +71,15 @@
 </head>
 
 <body class="<?php echo $sezione ?>">
+	
+<?php
+    if (isset($_POST['stop-all']))
+    {
+         shell_exec('mpc stop && service mpd restart');
+    }
+?>	
+	
+	
 
 <div id="menu-top" class="ui-header ui-bar-f ui-header-fixed slidedown" data-position="fixed" data-role="header" role="banner">
 	<div class="dropdown">
@@ -91,6 +100,7 @@
 		<button id="stop" class="btn btn-cmd" title="Stop"><i class="fa fa-stop"></i></button>
 		<button id="play" class="btn btn-cmd" title="Play/Pause"><i class="fa fa-play"></i></button>
 		<button id="next" class="btn btn-cmd" title="Next"><i class="fa fa-step-forward"></i></button>
+		<form method="post"><button id="stop-all" name="restart mpd" class="btn btn-cmd" ><i class="fa fa-stop"></i></button></form>
 	</div>
 	<a class="home" href="index.php"><img src="images/logo.png" class="logo" alt="VAMP"></a>
 </div>
