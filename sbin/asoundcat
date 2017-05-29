@@ -7,11 +7,7 @@ cat /proc/asound/card*/pcm*p/* | grep id
 cat /proc/asound/card*/pcm*p/sub*/* | grep access
 cat /proc/asound/card*/pcm*p/sub*/* | grep DSD
 cat /proc/asound/card*/pcm*p/sub*/* | grep state
-cat /proc/asound/card*/pcm*p/sub*/* | grep channels
 cat /proc/asound/card*/pcm*p/sub*/* | grep rate
-
-echo "
-Dsd " && cat /etc/mpd.conf | grep --color=auto 'dop' 
-echo "  
+ 
 USB DEVICES" 
 lsusb | grep -v Linux
