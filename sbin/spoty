@@ -20,4 +20,5 @@ chmod 777 /etc/spopd.conf
 git clone https://github.com/norrest/volumio.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
 sudo cp -pfR /update/tmpi/spoty/ /www/
+service nginx restart && service php5-fpm restart
 exit 0
