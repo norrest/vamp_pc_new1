@@ -21,7 +21,7 @@ sudo rm -R /update/
 mkdir -p /update/tmpi
 git clone https://github.com/norrest/volumio.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
-sudo cp -pfR /update/tmpi/spoty/ /www/
+sudo cp -pfR /update/tmpi/spoty/* /var/www/
 sudo rm -R /update/tmpi
 service nginx restart && service php5-fpm restart
 exit 0
