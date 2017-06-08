@@ -75,58 +75,20 @@ fi
 ## too "cold" sound and less OS stability with current image ( betaacx.img )
 
 # beta1
-if [ "$1" == "Mike" ]; then
-echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+if [ "$1" == "Eco-Mode" ]; then
+echo -n powersave > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 ifconfig eth0 mtu 1500
+/etc/init.d/rsyslog stop
+echo 0 > /proc/sys/vm/swappiness
 echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 100000 > /proc/sys/kernel/sched_latency_ns
-echo 10000 > /proc/sys/kernel/sched_rt_period_us
-echo 9500 > /proc/sys/kernel/sched_rt_runtime_us
-#echo 3 > /proc/sys/vm/drop_caches
-echo "flush BETA1 sound profile"
+echo 20 > /proc/sys/vm/dirty_ratio
+echo 20 > /proc/sys/vm/dirty_background_ratio # увеличили страничный кеш 
+echo "flush Eco-Mod sound profile"
 fi
 
 ## kernel latency settings (1.0 BetaACX - betaacx.img ) MOD1
 ## "warm" sound but little less "focus" 
 
-# mod1
-if [ "$1" == "ACX" ]; then
-echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-ifconfig eth0 mtu 1500
-echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 1000000 > /proc/sys/kernel/sched_latency_ns
-echo 166666 > /proc/sys/kernel/sched_rt_period_us
-echo 158333 > /proc/sys/kernel/sched_rt_runtime_us
-echo "flush MOD1 sound profile 'warm'"
-fi
-
-## kernel latency settings (1.0 BetaACX - betaacx.img ) MOD2 
-## very good sound "balance" and "transparency". My choice for current betaacx.img
-
-# mod2
-if [ "$1" == "Orion" ]; then
-echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-ifconfig eth0 mtu 1500
-echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 500000 > /proc/sys/kernel/sched_latency_ns
-echo 124999 > /proc/sys/kernel/sched_rt_period_us
-echo 118749 > /proc/sys/kernel/sched_rt_runtime_us
-echo "flush MOD2 sound profile 'balance and transparency'"
-fi
-
-## kernel latency settings (1.0 BetaACX - betaacx.img ) MOD2 
-## very good sound "balance" and "transparency". My choice for current betaacx.img
-
-# mod3
-if [ "$1" == "Buscia" ]; then
-echo -n conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-ifconfig eth0 mtu 1500
-echo noop > /sys/block/mmcblk0/queue/scheduler
-echo 625000 > /proc/sys/kernel/sched_latency_ns
-echo 156248 > /proc/sys/kernel/sched_rt_period_us
-echo 148436 > /proc/sys/kernel/sched_rt_runtime_us
-echo "flush MOD3 sound profile 'balance and transparency'"
-fi
 
 # dev
 if [ "$1" == "dev" ]; then
