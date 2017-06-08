@@ -282,6 +282,11 @@ function parseResponse(inputArr,respType,i,inpath) {
 				// This is a generic folder not at the root level
 					content += '"><div class="db-icon db-folder db-browse"><i class="fa fa-folder-open sx"></i></div><div class="db-action"><a class="btn" href="#notarget" title="Actions" data-toggle="context" data-target="#context-menu"><i class="fa fa-reorder"></i></a></div><div class="db-entry db-folder db-browse">';
 
+				 } else if (inputArr[i].directory == 'UPNP') {
+            			// This is the UPNP root folder
+               				content += '"><div class="db-icon db-folder db-browse"><i class="fa fa-code-fork icon-root sx"></i></div><div class="db-action"><a class="btn" href="#notarget" title="Actions" data-toggle="context" data-target="#context-menu-root"><i class="fa fa-reorder"></i></a></div><div class="db-entry db-folder db-browse">';
+
+				
 				} else if (inputArr[i].directory == 'WEBRADIO') {
 				// This is the WEBRADIO root folder
 					content += '"><div class="db-icon db-folder db-browse"><i class="fa fa-microphone icon-root sx"></i></div><div class="db-action"><a class="btn" href="#notarget" title="Actions" data-toggle="context" data-target="#context-menu-root"><i class="fa fa-reorder"></i></a></div><div class="db-entry db-folder db-browse">';
