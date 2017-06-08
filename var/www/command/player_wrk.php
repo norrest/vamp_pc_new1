@@ -352,7 +352,7 @@ session_start();
 	switch($_SESSION['w_queue']) {
 
 		case 'reboot':
-		$cmd = 'sudo shutdown -r';
+		$cmd = 'sudo shutdown -r now';
 		sysCmd($cmd);
 		break;
 		
