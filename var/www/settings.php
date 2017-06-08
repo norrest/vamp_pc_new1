@@ -632,7 +632,6 @@ $_i2s['i2s'] .= "<option value=\"Iqaudio\" ".(($_SESSION['i2s'] == 'Iqaudio') ? 
 $_i2s['i2s'] .= "<option value=\"IqaudioDacPlus\" ".(($_SESSION['i2s'] == 'IqaudioDacPlus') ? "selected" : "").">IQaudIO DAC Plus</option>\n";
 $_i2s['i2s'] .= "<option value=\"RpiDac\" ".(($_SESSION['i2s'] == 'RpiDac') ? "selected" : "").">RPi-DAC</option>\n";
 $_i2s['i2s'] .= "<option value=\"Generic\" ".(($_SESSION['i2s'] == 'Generic') ? "selected" : "").">Generic</option>\n";
-$_system_select['orionprofile'] .= "<option value=\"Orion\" ".(($_SESSION['orionprofile'] == 'Orion') ? "selected" : "").">Orion</option>\n";
 $_system_select['cmediafix1'] .= "<input type=\"radio\" name=\"cmediafix\" id=\"togglecmedia1\" value=\"1\" ".(($_SESSION['cmediafix'] == 1) ? "checked=\"checked\"" : "").">\n";
 $_system_select['cmediafix0'] .= "<input type=\"radio\" name=\"cmediafix\" id=\"togglecmedia2\" value=\"0\" ".(($_SESSION['cmediafix'] == 0) ? "checked=\"checked\"" : "").">\n";
 $_system_select['djmount1'] .= "<input type=\"radio\" name=\"djmount\" id=\"toggledjmount1\" value=\"1\" ".(($_SESSION['djmount'] == 1) ? "checked=\"checked\"" : "").">\n";
