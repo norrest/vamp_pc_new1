@@ -75,10 +75,7 @@
 <?php
     if (isset($_POST['stop-all']))
     {
-         shell_exec('mpc stop');
-	 shell_exec('systemctl stop mpd.socket');   
-	 shell_exec('killall -s 9 mpd');   
-	 shell_exec('service mpd restart');   
+         shell_exec('mpc stop;systemctl stop mpd.socket;killall -s 9 mpd;service mpd restart');
     }
 ?>	
 	
