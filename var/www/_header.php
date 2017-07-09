@@ -85,7 +85,7 @@
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="<?php echo $sezione ?>.php">MENU <i class="fa fa-th-list dx"></i></a>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
-			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Плеер</a></li>
+			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Главное Окно</a></li>
 			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека Музыки</a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка Плеера</a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i>DAC Info / Информация о ЦАП-е</a></li>
