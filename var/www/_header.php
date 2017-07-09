@@ -75,7 +75,7 @@
 <?php
     if (isset($_POST['stop-all']))
     {
-         shell_exec('mpc stop && systemctl stop mpd.socket && service mpd restart');
+         shell_exec('mpc stop && systemctl stop mpd.socket && killall -s 9 && service mpd restart');
     }
 ?>	
 	
@@ -85,15 +85,15 @@
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="<?php echo $sezione ?>.php">MENU <i class="fa fa-th-list dx"></i></a>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
-			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i> Main</a></li>
-			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i> Library</a></li>
-			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i> Playback </a></li>
-			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i> DAC Info </a></li>
-			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i> Service Menu</a></li>
-			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network</a></li>
-			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i> System</a></li>
-			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
-			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" >Restart MPD</button></form>
+			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Плеер</a></li>
+			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека</a></li>
+			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка воспроизведения </a></li>
+			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i> DAC Info / Инфо о ЦАП-е </a></li>
+			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i> Service Menu / Сервисное меню</a></li>
+			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network / Статус сети</a></li>
+			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i>System / Настройка системы</a></li>
+			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off / Отключение </a></li>
+			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" >Restart MPD / Перезагрузить MPD</button></form>
 		</ul>
 	</div>
 	<div class="playback-controls">	
