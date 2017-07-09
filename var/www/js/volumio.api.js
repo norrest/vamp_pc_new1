@@ -33,7 +33,7 @@
 	SpopState: 0,
     cmd: 'status',
     playlist: null,
-    currentsong: null,
+    currentsong: null, 
     currentknob: null,
     state: '',
     currentpath: '',
