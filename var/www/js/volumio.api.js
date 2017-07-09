@@ -497,9 +497,9 @@ function updateGUI(objectInputState){
 
 	$('#elapsed').html(timeConvert(objectInputState['elapsed']));
 	$('#total').html(timeConvert(objectInputState['time']));
-	//$('#time').val(objectInputState['song_percent']).trigger('change');
-
-	var fileinfo = (objectInputState['audio_channels'] && objectInputState['audio_sample_depth'] && objectInputState['audio_sample_rate']) ? (objectInputState['audio_channels'] + ' - ' + objectInputState['audio_sample_depth'] + ' bit - ' + objectInputState['audio_sample_rate'] +' kHz ') : '&nbsp;';
+	$('#time').val(objectInputState['song_percent']).trigger('change');
+    var fileinfo = (objectInputState['audio_sample_depth'] && objectInputState['audio_sample_rate'] && objectInputState['audio_channels']) ? (objectInputState['audio_sample_depth'] + ' bit - ' + objectInputState['audio_sample_rate'] + '&nbsp;' +  objectInputState['audio_channels']) : '&nbsp;';
+//	var fileinfo = (objectInputState['audio_sample_depth'] && objectInputState['audio_sample_rate']) ? (' - ' + objectInputState['audio_sample_depth'] + ' bit - ' + objectInputState['audio_sample_rate'] +' Hz ') :;
 	$('#format-bitrate').html(fileinfo);
 
 	$('#playlist-position').html('Playlist position ' + (parseInt(objectInputState['song']) + 1) +'/'+objectInputState['playlistlength']);
