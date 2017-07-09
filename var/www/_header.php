@@ -86,13 +86,13 @@
 		<a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="<?php echo $sezione ?>.php">MENU <i class="fa fa-th-list dx"></i></a>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
 			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Плеер</a></li>
-			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Музыкальная Библиотека</a></li>
-			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка Плеера </a></li>
-			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i> DAC Info / Информация о ЦАП-е </a></li>
-			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i> Service Menu / Сервисное Меню</a></li>
-			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network / Статус Сети</a></li>
+			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека Музыки</a></li>
+			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка Плеера</a></li>
+			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i>DAC Info / Информация о ЦАП-е</a></li>
+			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i>Service Menu / Сервисное Меню</a></li>
+			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i>Network / Статус Сети, CPU</a></li>
 			<li class="<?php ami('settings'); ?>"><a href="settings.php"><i class="fa fa-wrench sx"></i>System / Настройка Системы</a></li>
-			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off / Отключение </a></li>
+			<li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i>Turn off / Отключение</a></li>
 			<form method="post"><button id="stop-all" name="stop-all" class="btn btn-cmd" >Restart MPD</button></form>
 		</ul>
 	</div>
