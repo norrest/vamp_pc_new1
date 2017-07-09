@@ -75,7 +75,10 @@
 <?php
     if (isset($_POST['stop-all']))
     {
-         shell_exec('mpc stop && systemctl stop mpd.socket && killall -s 9 && service mpd restart');
+         shell_exec('mpc stop');
+	 shell_exec('systemctl stop mpd.socket');   
+	 shell_exec('killall -s 9 mpd');   
+	 shell_exec('service mpd restart');   
     }
 ?>	
 	
@@ -87,7 +90,7 @@
 		<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
 			<li class="<?php ami('index'); ?>"><a href="index.php"><i class="fa fa-play sx"></i>Main / Плеер</a></li>
 			<li class="<?php ami('sources'); ?>"><a href="sources.php"><i class="fa fa-folder-open sx"></i>Library / Библиотека</a></li>
-			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка воспроизведения </a></li>
+			<li class="<?php ami('mpd-config'); ?>"><a href="mpd-config.php"><i class="fa fa-cogs sx"></i>Playback / Настройка плеера </a></li>
 			<li class="<?php ami('mpd-config'); ?>"><a href="credits.php" ><i class="fa fa-cogs sx"></i> DAC Info / Инфо о ЦАП-е </a></li>
 			<li><a href="#service-menu-modal" data-toggle="modal" ><i class="fa fa-cogs sx"></i> Service Menu / Сервисное меню</a></li>
 			<li class="<?php ami('net-config'); ?>"><a href="net-config.php"><i class="fa fa-sitemap sx"></i> Network / Статус сети</a></li>
