@@ -200,6 +200,14 @@ $cpuload = shell_exec("top -bn 2 -d 0.5 | grep 'Cpu(s)' | tail -n 1 | awk '{prin
 $cpuload = number_format($cpuload,0,'.','');
 $cputemp = substr(shell_exec('cat /sys/class/thermal/thermal_zone0/temp'), 0, 2);
 $cpufreq = (float)shell_exec('cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq');
+$dacinfo = shell_exec("cat /proc/asound/* | grep USB");
+$dacspeed = shell_exec("cat /proc/asound/* | grep speed | grep usb");
+$status = shell_exec("cat /proc/asound/card*/* | grep Status");
+$status_dsd = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep DSD");
+$status_usb = shell_exec("lsusb | grep -v Linux");
+$mpdinfo = shell_exec("service mpd status | grep Ac");
+$mpdver = shell_exec("mpd -V | grep Music");
+$alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 
 if ($cpufreq < 1000000) {
 	$cpufreq = number_format($cpufreq / 1000, 0, '.', '');
@@ -227,39 +235,34 @@ if (!empty($ipwlan0)) {
     // eth0
     if (isset($_SESSION['netconf']['eth0']) && !empty($_SESSION['netconf']['eth0'])) {
     $_eth0 .= "<div class=\"alert alert-info\">\n";
-	$_eth0 .= "<div><b>Status:</b>   ".$statuset."</div>\n";
+	$_eth0 .= "<div><font size=3 ><b>DAC INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><b></b> ".$dacinfo."</div>\n";
+	$_eth0 .= "<div><b></b> ".$dacspeed."</div>\n";
+	$_eth0 .= "<div><b></b> ".$alsa_rate."</div>\n";
+	$_eth0 .= "<div> ".$status." </div>\n";	
+	$_eth0 .= "<div><b> ".$status_dsd." </b></div>\n";
+	$_eth0 .= "</br>\n";
+	$_eth0 .= "<div><font size=3 ><b>MPD INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
+	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
+	$_eth0 .= "</br>\n";
+	$_eth0 .= "<div><font size=3 ><b>USB INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><b> ".$status_usb." </b></div>\n";
+	$_eth0 .= "</br>\n";
+	$_eth0 .= "<div><font size=3 ><b>LAN INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><b> Status:</b>   ".$statuset."</div>\n";
 	$_eth0 .= "<div><b>IP address:</b>   ".$ipeth0."</div>\n";
     $_eth0 .= "<div><b>Speed:</b> ".$speth0."</div>\n";
-	$_eth0 .= "<div><b>CPU LOAD %:</b> ".$cpuload."</div>\n";
-	$_eth0 .= "<div><b>CPU TEMP °C:</b> ".$cputemp."</div>\n";
-	$_eth0 .= "<div><b>CPU FREQ :</b> ".$cpufreq."</div>\n";
-    $_eth0 .= "</div>\n";
-    $_int0name .= $net[0]['name'];
-    $_int0dhcp .= "<option value=\"true\" ".((isset($net[0]['dhcp']) && $net[0]['dhcp']=="true") ? "selected" : "")." >Automatic (DHCP - Default)</option>\n";
-    $_int0dhcp .= "<option value=\"false\" ".((isset($net[0]['dhcp']) && $net[0]['dhcp']=="false") ? "selected" : "")." >Static</option>\n";
-    $_int0 = $net[0];
-	$cardnum = file_get_contents('/proc/asound/card1/id') == '' ? '0' : '1';
+	$_eth0 .= "</br>\n";
+	$_eth0 .= "<div><font size=3 ><b>CPU INFO:</b></font> </div>\n";	
+	$_eth0 .= "<div><b>Load %:</b> ".$cpuload."</div>\n";
+	$_eth0 .= "<div><b>Temp °C:</b> ".$cputemp."</div>\n";
+	$_eth0 .= "<div><b>Freq:</b> ".$cpufreq."</div>\n";
+	$_eth0 .= "</div>\n";
     }
 
-    // wlan0
-    if (isset($_SESSION['netconf']['wlan0']) && !empty($_SESSION['netconf']['wlan0'])) {
-    $_wlan0 .= "<div class=\"alert alert-info\">\n";
-	$_wlan0 .= "<div><b>Status:</b>   ".$statuswl."</div>\n";
-    $_wlan0 .= "<div><b>IP address:</b> ".$ipwlan0."</div>\n";
-	$_wlan0 .= "<div><b>Signal Strength:</b> ".$quwlan0."%</div>\n";
-	$_wlan0 .= "<div><b>BitRate:</b> ".$bitrate." Mb/s</div>\n";
-	$_wlan0 .= "<div><b>CPU LOAD %:</b> ".$cpuload."</div>\n";
-	$_wlan0 .= "<div><b>CPU TEMP °C:</b> ".$cputemp."</div>\n";
-	$_wlan0 .= "<div><b>CPU FREQ :</b> ".$cpufreq."</div>\n";
-    $_wlan0 .= "</div>\n";
-    $_wlan0 .= "</div>\n";
-    $_wlan0ssid = $wifisec[0]['ssid'];
-}
-    $_wlan0security .= "<option value=\"none\"".(($wifisec[0]['security'] == 'none') ? "selected" : "").">No security</option>\n";
-    $_wlan0security .= "<option value=\"wep\"".(($wifisec[0]['security'] == 'wep') ? "selected" : "").">WEP</option>\n";
-    $_wlan0security .= "<option value=\"wpa\"".(($wifisec[0]['security'] == 'wpa') ? "selected" : "").">WPA/WPA2 - Personal</option>\n";
-	
-    
+
+   
 
 $tpl = "net-config.html";
 }
