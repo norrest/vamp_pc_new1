@@ -249,7 +249,7 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "</br>\n";
 	$_eth0 .= "<div><font size=3 ><b>DISK INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b>SATA disk size,available:</b></div>\n";
-	$_eth0 .= "<div>".$free_space."</div>\n";
+	$_eth0 .= "<div>".$free_space_usb."</div>\n";
 	$_eth0 .= "<div><b>NAS mounted disks: </b>".$free_space_nas."</div>\n";
 	$_eth0 .= "</br>\n";	
 	$_eth0 .= "<div><font size=3 ><b>USB INFO:</b></font> </div>\n";
