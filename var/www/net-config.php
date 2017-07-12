@@ -208,7 +208,8 @@ $status_usb = shell_exec("lsusb | grep -v Linux");
 $mpdinfo = shell_exec("service mpd status | grep Ac");
 $mpdver = shell_exec("mpd -V | grep Music");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
-
+$free_space_usb = shell_exec("df -h --output=size,avail | grep /mnt/USB/");
+$free_space_nas= shell_exec("df -h --output=source | grep // ");
 if ($cpufreq < 1000000) {
 	$cpufreq = number_format($cpufreq / 1000, 0, '.', '');
 	$cpufreq .= ' MHz';
@@ -246,6 +247,11 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
 	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
 	$_eth0 .= "</br>\n";
+	$_eth0 .= "<div><font size=3 ><b>DISK INFO:</b></font> </div>\n";
+	$_eth0 .= "<div><b>SATA disk size,available:</b></div>\n";
+	$_eth0 .= "<div>".$free_space."</div>\n";
+	$_eth0 .= "<div><b>NAS mounted disks: </b>".$free_space_nas."</div>\n";
+	$_eth0 .= "</br>\n";	
 	$_eth0 .= "<div><font size=3 ><b>USB INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b> ".$status_usb." </b></div>\n";
 	$_eth0 .= "</br>\n";
