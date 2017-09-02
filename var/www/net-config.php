@@ -208,7 +208,7 @@ $status_usb = shell_exec("lsusb | grep -v Linux");
 $mpdinfo = shell_exec("service mpd status | grep Ac");
 $mpdver = shell_exec("mpd -V | grep Music");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
-$free_space_usb = shell_exec("df -h --output=size,avail | grep /mnt/USB/");
+$free_space_usb = shell_exec("df -h | grep /mnt/USB");
 $free_space_nas= shell_exec("df -h --output=source | grep // ");
 if ($cpufreq < 1000000) {
 	$cpufreq = number_format($cpufreq / 1000, 0, '.', '');
