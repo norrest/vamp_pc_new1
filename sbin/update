@@ -1,12 +1,5 @@
 #! /bin/sh
-ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
-ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-#ver="${ver//.}"          # remove periods (a single `/` would do here)
-#echo "$ver"
-b="4"
-#echo b
-if [ "$ver" \> "$b" ];
-then
+
 sudo mpc stop
 systemctl stop mpd.socket 
 sudo /etc/init.d/mpd stop
@@ -18,8 +11,7 @@ echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput s
 mkdir -p /update/tmpi
 mkdir -p /usr/share/nginx/html
 mkdir -p /etc/nginx/html
-mkdir -p /lib/modules/4.4.8/kernel/sound/usb
-git clone https://github.com/norrest/volumio.git /update/tmpi/
+git clone https://github.com/norrest/vamp_pc.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
 sudo rm -R /etc/apt/sources.list.d/
 sudo cp -pfR /update/tmpi/etc/ /
