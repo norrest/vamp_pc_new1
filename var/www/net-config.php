@@ -199,7 +199,10 @@ $bitr = "iwconfig wlan0 | grep 'Bit Rate' | awk '{print $2}' | tr -d 'Bit Rate='
 $cpuload = shell_exec("top -bn 2 -d 0.5 | grep 'Cpu(s)' | tail -n 1 | awk '{print $2 + $4 + $6}'");
 $cpuload = number_format($cpuload,0,'.','');
 $cputemp = substr(shell_exec('cat /sys/class/thermal/thermal_zone0/temp'), 0, 2);
-$cpufreq = (float)shell_exec('cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq');
+$cpuinfonew = shell_exec("cat /proc/cpuinfo | grep 'model name' | sort | uniq");
+$cpufreqnew = shell_exec("grep MHz /proc/cpuinfo  | sort | uniq");
+$cpufreqnewmemtotall = shell_exec("grep MemTotal /proc/meminfo  | sort | uniq");
+$cpufreqnewmemfree = shell_exec("grep MemFree /proc/meminfo  | sort | uniq");
 $dacinfo = shell_exec("cat /proc/asound/* | grep USB");
 $dacspeed = shell_exec("cat /proc/asound/* | grep speed | grep usb");
 $status = shell_exec("cat /proc/asound/card*/* | grep Status");
@@ -210,13 +213,7 @@ $mpdver = shell_exec("mpd -V | grep Music");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 $free_space_usb = shell_exec("df -h | grep /mnt/USB");
 $free_space_nas= shell_exec("df -h --output=source | grep // ");
-if ($cpufreq < 1000000) {
-	$cpufreq = number_format($cpufreq / 1000, 0, '.', '');
-	$cpufreq .= ' MHz';
-} else {
-	$cpufreq = number_format($cpufreq / 1000000, 1, '.', '');
-	$cpufreq .= ' GHz';
-}
+
 
 if (!empty($ipeth0)) {
     $statuset = 'Connected <i class="fa fa-check green sx"></i>';
@@ -261,10 +258,12 @@ if (!empty($ipwlan0)) {
     $_eth0 .= "<div><b>Speed:</b> ".$speth0."</div>\n";
 	$_eth0 .= "</br>\n";
 	$_eth0 .= "<div><font size=3 ><b>CPU INFO:</b></font> </div>\n";	
+	$_eth0 .= "<div><b> ".$cpuinfonew."</b></div>\n";
+	$_eth0 .= "<div><b> ".$cpufreqnew."</b> </div>\n";
+	$_eth0 .= "<div><b> ".$cpufreqnewmemtotall."</b> </div>\n";
+	$_eth0 .= "<div><b> ".$cpufreqnewmemfree."</b> </div>\n";
 	$_eth0 .= "<div><b>Load %:</b> ".$cpuload."</div>\n";
-	$_eth0 .= "<div><b>Temp °C:</b> ".$cputemp."</div>\n";
-	$_eth0 .= "<div><b>Freq:</b> ".$cpufreq."</div>\n";
-	$_eth0 .= "</div>\n";
+		$_eth0 .= "</div>\n";
     }
 
 
