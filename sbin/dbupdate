@@ -4,8 +4,5 @@ ifconfig | grep HWaddr | sed 's/.*HWaddr //' 1> /sbin/locall
 dos2unix /bin/chkdata
 touch -t201211030000 /sbin/locall /bin/chkdata
 dos2unix /etc/rc.local
-update-rc.d -f minidlna remove
-update-rc.d -f upmpdcli remove
-(echo root; echo root) | smbpasswd -a -s root
 sudo bash /sbin/delllogs
 exit 0
