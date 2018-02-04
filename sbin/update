@@ -1,30 +1,17 @@
 #! /bin/sh
-
 sudo mpc stop
 systemctl stop mpd.socket 
 sudo /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
-#echo "$(tput setaf 1)[+] Installing Git$(tput sgr 0)"
-#install git
-echo "$(tput setaf 1)[+] Cloning web updates for Volumio pro from github$(tput sgr 0)"
-#git clone the Volumio-WEBUI into our nginx webserver directory
 mkdir -p /update/tmpi
-mkdir -p /usr/share/nginx/html
-mkdir -p /etc/nginx/html
 git clone https://github.com/norrest/vamp_pc.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
-sudo rm -R /etc/apt/sources.list.d/
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
 sudo cp -pfR /update/tmpi/bin/ /
-sudo cp -pfR /update/tmpi/50x.html /usr/share/nginx/html/
-sudo cp -pfR /update/tmpi/50x.html /etc/nginx/html/
 sudo bash /sbin/dbupdate
-apt-get -y update
-apt-get -y install ethtool
 sleep 1
-#optionally remove git just to clean things up.
 sudo rm -R /update/tmpi
 sudo rm -R /sbin/dbupdate
 sudo mkdir /var/lib/mpd/playlists/
@@ -32,7 +19,3 @@ sudo chmod -R 777 /var/lib/mpd/playlists/
 /etc/init.d/mpd start
 echo "$(tput setaf 1)[+] If you see no errors, everything is done perfectly!"
 sudo service php5-fpm restart && sudo service nginx restart
-       exit 1;
-fi
-    echo "old ver"   
-       exit 1;
