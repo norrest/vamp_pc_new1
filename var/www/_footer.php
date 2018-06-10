@@ -23,6 +23,7 @@
 			<button id="check-and-space" name="Check internal disk" formtarget="_blank" formaction="chec.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Checking internal Disk / Проверить жесткие диски </button>
 			<button id="force-remove-samba" name="Forced Remove Network Mount" formtarget="_blank" formaction="del.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Forced Removal Of Network Mount / Принудительно удалить сетевые шары</button>
 			<button id="update-git-hub" name="Update Git Hub" formtarget="_blank" formaction="update.php" class="btn btn-primary btn-large btn-block"><i class=""></i> Update V.A.M.P. / Обновить V.A.M.P. </button>
+			<button target="_blank" id=" site" name="V.A.M.P." formtarget="_blank" formaction="http://digitall.in.ua/forum/topic/v-a-m-p-for-pc/?part=1#" class="btn btn-block"><i class=""></i>Посетить форум поддержки V.A.M.P. PC</button>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
