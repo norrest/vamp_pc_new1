@@ -201,6 +201,7 @@ $cpuload = number_format($cpuload,0,'.','');
 $cputemp = substr(shell_exec('cat /sys/class/thermal/thermal_zone0/temp'), 0, 2);
 $cpuinfonew = shell_exec("cat /proc/cpuinfo | grep 'model name' | sort | uniq");
 $cpufreqnew = shell_exec("grep MHz /proc/cpuinfo  | sort | uniq");
+$mpderrors = shell_exec(" mpc | grep  ERROR");
 $cpufreqnewmemtotall = shell_exec("grep MemTotal /proc/meminfo  | sort | uniq");
 $cpufreqnewmemfree = shell_exec("grep MemFree /proc/meminfo  | sort | uniq");
 $dacinfo = shell_exec("cat /proc/asound/* | grep USB");
@@ -243,6 +244,7 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><font size=3 ><b>MPD INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
 	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
+	$_eth0 .= "<div><b><font color=#ff0000 size=3>".$mpderrors."</b></font></div>\n";
 	$_eth0 .= "</br>\n";
 	$_eth0 .= "<div><font size=3 ><b>DISK INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b>SATA disk size,available:</b></div>\n";
