@@ -214,7 +214,7 @@ $mpdver = shell_exec("mpd -V | grep Music");
 $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 $free_space_usb = shell_exec("df -h | grep /mnt/USB");
 $free_space_nas= shell_exec("df -h --output=source | grep // ");
-
+$kernel_version= shell_exec("uname -r");
 
 if (!empty($ipeth0)) {
     $statuset = 'Connected <i class="fa fa-check green sx"></i>';
@@ -265,7 +265,8 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><b> ".$cpufreqnewmemtotall."</b> </div>\n";
 	$_eth0 .= "<div><b> ".$cpufreqnewmemfree."</b> </div>\n";
 	$_eth0 .= "<div><b>Load %:</b> ".$cpuload."</div>\n";
-		$_eth0 .= "</div>\n";
+	$_eth0 .= "<div><b>Load %:</b> ".$kernel_version."</div>\n";   
+	    		$_eth0 .= "</div>\n";
     }
 
 
