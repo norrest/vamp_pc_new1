@@ -5,4 +5,9 @@ mount /dev/sdc1 /mnt/USB/sdc1
 mount /dev/sdc2 /mnt/USB/sdc2
 mount /dev/sdd1 /mnt/USB/sdd1
 mount /dev/sdd2 /mnt/USB/sdd2
+mount /dev/sde1 /mnt/USB/sde1
+mount /dev/sde2 /mnt/USB/sde2
+mount /dev/sdf1 /mnt/USB/sdf1
+mount /dev/sdg1 /mnt/USB/sdg1
+mount /dev/sdg2 /mnt/USB/sdg2
 exit 0
