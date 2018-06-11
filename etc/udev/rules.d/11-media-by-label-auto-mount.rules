@@ -1,0 +1,2 @@
+ACTION=="add" KERNEL=="sd[b-z][1-9]" RUN+="/bin/mkdir -p /mnt/USB/%k"
+ACTION=="remove" KERNEL=="sd[b-z][1-9]" RUN+="/bin/rmdir /mnt/USB/%k"
