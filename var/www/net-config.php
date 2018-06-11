@@ -244,6 +244,7 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><font size=3 ><b>MPD INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
 	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
+	 $_eth0 .= "<div><b>Linux Kernel ver.</b> ".$kernel_version."</div>\n"; 
 	$_eth0 .= "<div><b><font color=#ff0000 size=3>".$mpderrors."</b></font></div>\n";
 	$_eth0 .= "</br>\n";
 	$_eth0 .= "<div><font size=3 ><b>DISK INFO:</b></font> </div>\n";
@@ -265,7 +266,6 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><b> ".$cpufreqnewmemtotall."</b> </div>\n";
 	$_eth0 .= "<div><b> ".$cpufreqnewmemfree."</b> </div>\n";
 	$_eth0 .= "<div><b>Load %:</b> ".$cpuload."</div>\n";
-	$_eth0 .= "<div><b>Load %:</b> ".$kernel_version."</div>\n";   
 	    		$_eth0 .= "</div>\n";
     }
 
