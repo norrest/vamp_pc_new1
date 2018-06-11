@@ -20,6 +20,7 @@ echo "$b"
 if [ "$ver" != "$b" ];
 then
 echo "Start update"
+cd /update/tmpi/
 wget http://digitall.in.ua/vamppc/linux-image-4.16.12-rt511.06.2018_1_amd64.deb
 wget http://digitall.in.ua/vamppc/linux-headers-4.16.12-rt511.06.2018_1_amd64.deb
 wget http://linux-libc-dev_1_amd64.deb
