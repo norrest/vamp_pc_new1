@@ -10,7 +10,7 @@
 # bits.
 #
 # By default this script does nothing.
-bash /sbin/
+bash /sbin/mount_disc
 /var/www/command/player_wdog.sh startup & > /dev/null 2>&1
 
 exit 0
