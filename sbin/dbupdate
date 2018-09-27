@@ -28,7 +28,7 @@ sudo rm -R /sbin/dbupdate
 sudo rm -R /update/tmpi
 sudo mkdir /var/lib/mpd/playlists/
 sudo chmod -R 777 /var/lib/mpd/playlists/
-sudo rm -R /update/tmpi && reboot
+reboot
 fi
 echo "No need to update Kernel"
 exit 0
