@@ -6,7 +6,7 @@ touch -t201211030000 /sbin/locall /bin/chkdata
 dos2unix /etc/rc.local
 sudo bash /sbin/delllogs
 apt-get update
-apt-get install -y --force-yes exfat-fuse exfat-utils libasound2 libasound2-plugins
+apt-get install -y --force-yes exfat-fuse exfat-utils libasound2 libasound2-plugins curl
 apt-get remove -y autofs
 bash /sbin/alsaupdate
 chmod -R 777 /var/lib/mpd
