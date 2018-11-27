@@ -1,0 +1,25 @@
+#! /bin/sh
+mpdver="$(mpd -V | grep Music | cut -d "0" -f 2,3)" 
+mpdver="${mpdver%.*-*}"        # remove suffix starting with '.' and containing '-'
+mpdver="${mpdver//.}"          # remove periods (a single `/` would do here)
+curl -O https://raw.githubusercontent.com/norrest/volumio/master/sbin/mpd.ver
+newver="$(cat mpd.ver)"
+if [ "$mpdver" -ne "$newver" ];
+##echo "$mpdver"
+##echo "$newver"
+then
+echo "Обновление MPD"
+cd /root/
+curl -O http://digitall.in.ua/mpd_vamppc.tar.bz2
+mkdir ./mpd
+tar -xjvf mpd_vamppc.tar.bz2 -C ./mpd
+cd ./mpd
+systemctl stop mpd.socket & /etc/init.d/mpd stop
+make install&&bash /sbin/update-mpd-final
+rm -R /root/*mpd*
+echo "Версия MPD обновлена"
+else
+echo "Версия MPD не нуждается в обновлении"
+rm -R /root/*mpd*
+fi
+exit 0
