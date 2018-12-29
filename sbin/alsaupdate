@@ -3,7 +3,7 @@
 ##Release info https://www.alsa-project.org/main/index.php/Changes_v1.1.6_v1.1.7 
 ##The ALSA Library package contains the ALSA library used by programs (including ALSA Utilities) requiring access to the ALSA sound interface.
 ##This is an important component, as previously DSD Native support required updating these libraries.
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y install alsa-tools
 alsalibver="$(grep VERSION_STR /usr/include/alsa/version.h | sed -e 's/[^0-9]//g')"
 newveralsalib='117'
