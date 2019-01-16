@@ -6,18 +6,18 @@
 sudo apt-get update
 sudo apt-get -y install alsa-tools
 alsalibver="$(grep VERSION_STR /usr/include/alsa/version.h | sed -e 's/[^0-9]//g')"
-newveralsalib='117'
+newveralsalib='118'
 if [[ $alsalibver != $newveralsalib ]];
 then
 echo "$alsalibver"
 echo "$newveralsalib"
 echo "need to update"
 ## you can find info about ALSA at home page https://www.alsa-project.org/main/index.php/Main_Page
-## relese info https://www.alsa-project.org/main/index.php/Changes_v1.1.6_v1.1.7 
+## relese info https://www.alsa-project.org/main/index.php/Changes_v1.1.7_v1.1.8 
 apt-get install automake libtool
-curl -O ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.7.tar.bz2
-tar xvjf alsa-lib-1.1.7.tar.bz2
-cd alsa-lib-1.1.7
+curl -O ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.8.tar.bz2
+tar xvjf alsa-lib-1.1.8.tar.bz2
+cd alsa-lib-1.1.8
 ./configure
 make install
 else
