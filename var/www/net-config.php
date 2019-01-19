@@ -215,6 +215,7 @@ $alsa_rate = shell_exec("cat /proc/asound/card*/pcm*p/sub*/* | grep rate");
 $free_space_usb = shell_exec("df -h | grep /mnt/USB");
 $free_space_nas= shell_exec("df -h --output=source | grep // ");
 $kernel_version= shell_exec("uname -r");
+$alsalibver = shell_exec("grep VERSION_STR /usr/include/alsa/version.h");
 
 if (!empty($ipeth0)) {
     $statuset = 'Connected <i class="fa fa-check green sx"></i>';
@@ -244,7 +245,8 @@ if (!empty($ipwlan0)) {
 	$_eth0 .= "<div><font size=3 ><b>MPD INFO:</b></font> </div>\n";
 	$_eth0 .= "<div><b>".$mpdver."</b></div>\n";
 	$_eth0 .= "<div><b></b> ".$mpdinfo."</div>\n";
-	 $_eth0 .= "<div><b>Linux Kernel ver.</b> ".$kernel_version."</div>\n"; 
+	$_eth0 .= "<div><b>Linux Kernel ver.</b> ".$kernel_version."</div>\n"; 
+	$_eth0 .= "<div><b>Alsa Lib ver.</b> ".$alsalibver."</div>\n";     
 	$_eth0 .= "<div><b><font color=#ff0000 size=3>".$mpderrors."</b></font></div>\n";
 	$_eth0 .= "</br>\n";
 	$_eth0 .= "<div><font size=3 ><b>DISK INFO:</b></font> </div>\n";
