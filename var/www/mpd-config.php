@@ -217,7 +217,7 @@ $_mpd_select['audio_output_format'] .= "<option value=\"44100:32:2\" ".(($_mpd['
 $_mpd_select['audio_output_format'] .= "<option value=\"48000:32:2\" ".(($_mpd['audio_output_format'] == '48000:32:2') ? "selected" : "").">32 bit / 48 khz</option>\n";
 $_mpd_select['audio_output_format'] .= "<option value=\"88200:32:2\" ".(($_mpd['audio_output_format'] == '88200:32:2') ? "selected" : "").">32 bit / 88.2 khz</option>\n";
 $_mpd_select['audio_output_format'] .= "<option value=\"96000:32:2\" ".(($_mpd['audio_output_format'] == '96000:32:2') ? "selected" : "").">32 bit / 96 khz</option>\n";
-$_mpd_select['audio_output_format'] .= "<option value=\"176400:24:2\" ".(($_mpd['audio_output_format'] == '176400:24:2') ? "selected" : "").">24 bit / 176.4 khz</option>\n";
+$_mpd_select['audio_output_format'] .= "<option value=\"176400:32:2\" ".(($_mpd['audio_output_format'] == '176400:32:2') ? "selected" : "").">32 bit / 176.4 khz</option>\n";
 $_mpd_select['audio_output_format'] .= "<option value=\"192000:32:2\" ".(($_mpd['audio_output_format'] == '192000:32:2') ? "selected" : "").">32 bit / 192 khz</option>\n";
 $_mpd_select['audio_output_format'] .= "<option value=\"352800:32:2\" ".(($_mpd['audio_output_format'] == '352800:32:2') ? "selected" : "").">32 bit / 352.8 khz</option>\n";
 
