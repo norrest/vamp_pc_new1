@@ -12,26 +12,6 @@ bash /sbin/alsaupdate
 bash /sbin/mpd-update
 chmod -R 777 /var/lib/mpd
 chmod -R 777 /mnt/*
-# sudo apt-get purge -y $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | head -n -1)
-ver="$(uname -r)"        # get kernel release version, e.g., "3.10.34-1-MANJARO"
-ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-ver="${ver//.}"          # remove periods (a single `/` would do here)
-echo "$ver"
-b="418"
-echo "$b"
-if [ "$ver" != "$b" ];
-then
-echo "Start update"
-cd /update/tmpi/
-wget http://digitall.in.ua/vamppc/linux-headers-4.18.7-rt5_00_amd64.deb
-wget http://digitall.in.ua/vamppc/linux-image-4.18.7-rt5_00_amd64.deb
-dpkg -i *.deb
-sudo rm -R /sbin/dbupdate
-sudo rm -R /update/tmpi
-sudo mkdir /var/lib/mpd/playlists/
-sudo chmod -R 777 /var/lib/mpd/playlists/
-reboot
-fi
-echo "No need to update Kernel"
+curl -O https://raw.githubusercontent.com/norrest/volumio/master/sbin/kernel_update
+bash kernel_update
 exit 0
