@@ -12,6 +12,6 @@ bash /sbin/alsaupdate
 bash /sbin/mpd-update
 chmod -R 777 /var/lib/mpd
 chmod -R 777 /mnt/*
-curl -O https://raw.githubusercontent.com/norrest/volumio/master/sbin/kernel_update
-bash kernel_update
+curl -O https://raw.githubusercontent.com/norrest/vamp_pc/master/sbin/kernel_update_new
+kernel_update_new
 exit 0
