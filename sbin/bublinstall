@@ -1,0 +1,14 @@
+#!/bin/sh
+file=/usr/share/bubbleupnpserver/launch.sh
+test -e "$file" && {
+	echo "no need to install bubleupnp"
+	exit 0
+} || {
+	echo "NOT FOUND!"
+	apt-get update
+	apt-get install default-jdk
+	wget -N https://launchpad.net/~bubbleguuum/+archive/bubbleupnpserver/+files/bubbleupnpserver_0.9-5_all.deb && dpkg -i --force-overwrite bubbleupnpserver_0.9-5_all.deb
+	systemctl enable bubbleupnpserver
+	systemctl start bubbleupnpserver
+}
+exit 0
