@@ -10,6 +10,7 @@ apt-get install -y --force-yes exfat-fuse exfat-utils libasound2 libasound2-plug
 apt-get remove -y autofs
 bash /sbin/alsaupdate
 bash /sbin/mpd-update
+bash /sbin/bublinstall
 chmod -R 777 /var/lib/mpd
 chmod -R 777 /mnt/*
 curl -O https://raw.githubusercontent.com/norrest/vamp_pc/master/sbin/kernel_update_new
