@@ -5,6 +5,11 @@ dos2unix /bin/chkdata
 touch -t201211030000 /sbin/locall /bin/chkdata
 dos2unix /etc/rc.local
 sudo bash /sbin/delllogs
+getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null
+getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-sync -s /usr/bin/nologin -G audio shairport-sync >/dev/null
+sudo chmod 777 /usr/local/bin/shairport-sync
+sudo chmod 777 /etc/shairport-sync.conf
+rm -f /usr/lib/systemd/system/shairport-sync.service
 apt-get update
 apt-get install -y --force-yes exfat-fuse exfat-utils libasound2 libasound2-plugins curl
 apt-get remove -y autofs
