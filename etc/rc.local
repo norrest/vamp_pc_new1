@@ -10,7 +10,34 @@
 # bits.
 #
 # By default this script does nothing.
+quotaoff -a
+quotaoff --all 
+chmod -R 777 /tmp/*
+update-rc.d quota disable
+sleep 3
+ifconfig eth0 0.0.0.0 down
+ifconfig eth1 0.0.0.0 down
+ifconfig rename0 0.0.0.0 down
+ifconfig rename1 0.0.0.0 down
+ifconfig rename2 0.0.0.0 down
+brctl addbr mybridge
+brctl addif mybridge eth0
+brctl addif mybridge eth1
+brctl addif mybridge rename0
+brctl addif mybridge rename1
+brctl addif mybridge rename2
+ifconfig eth0 up
+ifconfig eth1 up 
+ifconfig rename0 up 
+ifconfig rename1 up 
+ifconfig rename2 up 
+ifconfig mybridge up 
+dhclient mybridge 
+brctl stp mybridge on
+sleep 1
+sudo chmod -R 777 /srv/*
+service smbd restart
 bash /sbin/mount_disc
 /var/www/command/player_wdog.sh startup & > /dev/null 2>&1
-
 exit 0
+
