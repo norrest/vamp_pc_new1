@@ -1,13 +1,14 @@
 #!/bin/bash
 ver="$(uname -r  | sed -e 's/[^0-9]//g')"  # get kernel release version
-latestver="418169"
-echo "$b"
+latestver="5117"
+echo "$ver"
+echo "$latestver"
 if [ "$ver" != "$latestver" ];
 then
 echo "Нужно обновить ядро!"
-curl -O http://digitall.in.ua/vamppc/linux-headers-4.18.16.deb
-curl -O http://digitall.in.ua/vamppc/linux-image-4.18.16.deb
-dpkg -i linux-headers-4.18.16.deb linux-image-4.18.16.deb && reboot
+curl -O http://digitall.in.ua/vamppc/linux-headers-5.1.17_01_amd64.deb
+curl -O http://digitall.in.ua/vamppc/linux-image-5.1.17_01_amd64.deb
+dpkg -i linux-headers-5.1.17_01_amd64.deb linux-image-5.1.17_01_amd64.deb && reboot
 else 
 echo "Уже используеться последняя версия ядра linux!"
 fi
