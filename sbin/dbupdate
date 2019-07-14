@@ -13,7 +13,7 @@ sudo chmod 777 /usr/local/bin/shairport-sync
 sudo chmod 777 /etc/shairport-sync.conf
 rm -f /usr/lib/systemd/system/shairport-sync.service
 apt-get update
-apt-get install -y --force-yes exfat-fuse exfat-utils libasound2 libasound2-plugins curl
+apt-get install -y --force-yes exfat-fuse exfat-utils libasound2 libasound2-plugins curl bridge-utils
 apt-get remove -y autofs
 bash /sbin/alsaupdate
 bash /sbin/mpd-update
