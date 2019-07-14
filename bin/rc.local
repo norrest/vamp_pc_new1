@@ -37,4 +37,6 @@ brctl stp mybridge on
 sleep 1
 sudo chmod -R 777 /srv/*
 service smbd restart
+bash /sbin/mount_disc
+/var/www/command/player_wdog.sh startup & > /dev/null 2>&1
 exit 0
