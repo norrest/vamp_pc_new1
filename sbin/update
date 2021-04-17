@@ -4,7 +4,7 @@ systemctl stop mpd.socket
 sudo /etc/init.d/mpd stop
 echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 mkdir -p /update/tmpi
-git clone https://github.com/norrest/vamp_pc.git /update/tmpi/
+git clone https://github.com/norrest/vamp_pc_new1.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
