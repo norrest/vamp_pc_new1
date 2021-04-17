@@ -6,6 +6,7 @@ echo "$(tput setaf 1)[+] Updating system...$(tput sgr 0)"
 mkdir -p /update/tmpi
 git clone https://github.com/norrest/vamp_pc_new1.git /update/tmpi/
 sudo chmod -R 777 /update/tmpi
+apt-get install alsa-utils
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/var/ /
 sudo cp -pfR /update/tmpi/sbin/ /
