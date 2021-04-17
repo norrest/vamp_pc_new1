@@ -1,4 +1,17 @@
 #! /bin/sh
+mkdir /mnt/USB/sda1
+mkdir /mnt/USB/sda2
+mkdir /mnt/USB/sdb1
+mkdir /mnt/USB/sdb2
+mkdir /mnt/USB/sdc1
+mkdir /mnt/USB/sdc2
+mkdir /mnt/USB/sdd1
+mkdir /mnt/USB/sdd2
+mkdir /mnt/USB/sde1
+mkdir /mnt/USB/sde2
+mkdir /mnt/USB/sdf1
+mkdir /mnt/USB/sdg1
+mkdir /mnt/USB/sdg2
 mount /dev/sda1 /mnt/USB/sda1
 mount /dev/sdb1 /mnt/USB/sdb1
 mount /dev/sdb2 /mnt/USB/sdb2
@@ -11,4 +24,5 @@ mount /dev/sde2 /mnt/USB/sde2
 mount /dev/sdf1 /mnt/USB/sdf1
 mount /dev/sdg1 /mnt/USB/sdg1
 mount /dev/sdg2 /mnt/USB/sdg2
+
 exit 0
