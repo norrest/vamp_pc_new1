@@ -3,6 +3,7 @@ print "Content-Type: text/html\n\n";
 sudo mpc stop
 service mpd stop
 umount /dev/sda1 -l
+umount /dev/sda2 -l
 umount /dev/sdb1 -l
 umount /dev/sdb2 -l
 umount /dev/sdb3 -l
@@ -19,6 +20,7 @@ umount /dev/sdd3 -l
 umount /dev/sdd4 -l 
 umount /dev/sdd5 -l 
 e2fsck -y -f /dev/sda1  
+e2fsck -y -f /dev/sda2  
 e2fsck -y -f /dev/sdb1  
 e2fsck -y -f /dev/sdb2  
 e2fsck -y -f /dev/sdb3  
